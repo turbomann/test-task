@@ -1,4 +1,4 @@
-Test Task
+Test Task Issuance of credits
 =========
 
 Prerequisites
@@ -17,3 +17,4 @@ Build and Run
 	```
 
 2. Open `http://localhost:8080` in a web browser.
+
