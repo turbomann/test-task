@@ -6,7 +6,6 @@ import javax.persistence.Column;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 import java.io.Serializable;
-import javax.persistence.Entity;
 
 //@Entity
 //@Table(name = "CLIENTS", uniqueConstraints = {
@@ -17,7 +16,7 @@ import javax.persistence.Entity;
 //        @UniqueConstraint(columnNames = "CLIENTEMAIL") })
 //        @UniqueConstraint(columnNames = "CLIENTPASSPORTN") })
 
-public class Client implements Serializable {
+public class Client extends Entity implements Serializable {
 
     public Client() {
     }

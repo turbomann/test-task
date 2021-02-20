@@ -3,12 +3,22 @@ package test;
 import net.bytebuddy.dynamic.scaffold.MethodRegistry;
 
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.time.LocalDate;
 import java.time.Month;
+import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
-public class TestMain {
+public class TestPaymentPeriod {
     public static void main(String[] args) {
 
         // How to calculate credit
+        String date = "2021-02-16";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern ("yyyy-MM-dd");
+        LocalDate localDate = LocalDate.parse(date, formatter);
+//        System.out.println(formatter.parse(date));
+
+
         int neededCreditSum = 300000;
         double commonSumm;
         double annuityPayment;
@@ -18,8 +28,8 @@ public class TestMain {
         double monthCreditRate;
 
 
-        DecimalFormat round = new DecimalFormat("#.####");
-        DecimalFormat roundPayment = new DecimalFormat("#.##");
+        DecimalFormat round = new DecimalFormat("#.####",new DecimalFormatSymbols(Locale.ENGLISH));
+        DecimalFormat roundPayment = new DecimalFormat("#.##",new DecimalFormatSymbols(Locale.ENGLISH));
 
         monthCreditRate = (percentageRate / 100) / 12;
         System.out.println("Calculate percent rate by Month");
@@ -43,15 +53,12 @@ public class TestMain {
 
         commonSumm = annuityPayment * creditPeriod;
         System.out.println("Payment plan");
-        System.out.println("Number of payment "+ " | " + "Repayment of principal" + " | " +
+        System.out.println("Number of payment "+" Date of payment "+ " | " + "Repayment of principal" + " | " +
                 " Percent repayment " + " | " + "Balance");
-        for (int i = 1; i <= creditPeriod ; i++) {
-            System.out.println(i + " | " + roundPayment.format(annuityPayment) + " | " +
+        for (int i = 1, b = 30; i <= creditPeriod ; i++, b += 30) {
+            System.out.println(i + " | " + roundPayment.format(annuityPayment) + " | " + localDate.plusDays(b) + " | " +
                     (roundPayment.format(annuityPayment - percent)) + " | " +
                     roundPayment.format(percent) + " | " + (roundPayment.format(commonSumm -= annuityPayment)));
         }
-
-
-
     }
 }
