@@ -1,18 +1,19 @@
 package com.haulmont.testtask.repository;
 
-import com.haulmont.testtask.entity.Client;
+import com.haulmont.testtask.entity.Clients;
 
 import java.util.UUID;
 
-public class ClientRepository extends Repository implements IEntityRepository<Client>{
+public class ClientRepository implements IEntityReposotory<Clients>{
+
 
     @Override
-    public Client getById(UUID ud) {
+    public Clients getById(UUID id) {
         return null;
     }
 
     @Override
-    public void save(Client entity) {
+    public void save(Clients entity) {
 
     }
 }

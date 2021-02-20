@@ -4,10 +4,10 @@ import com.haulmont.testtask.entity.Bank;
 
 import java.util.UUID;
 
-public class BankRepository extends Repository implements IEntityRepository<Bank>{
+public class BankRepository extends Repository implements IEntityReposotory<Bank> {
 
     @Override
-    public Bank getById(UUID ud) {
+    public Bank getById(UUID id) {
         return null;
     }
 

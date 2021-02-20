@@ -8,14 +8,14 @@ import javax.persistence.UniqueConstraint;
 import java.io.Serializable;
 import javax.persistence.Entity;
 
-@Entity
-@Table(name = "CLIENTS", uniqueConstraints = {
-        @UniqueConstraint(columnNames = "FIRSTNAME"),
-        @UniqueConstraint(columnNames = "LASTNAME"),
-        @UniqueConstraint(columnNames = "MIDDLENAME"),
-        @UniqueConstraint(columnNames = "TELEPHONENUMBER"),
-        @UniqueConstraint(columnNames = "CLIENTEMAIL") })
-        @UniqueConstraint(columnNames = "CLIENTPASSPORTN") })
+//@Entity
+//@Table(name = "CLIENTS", uniqueConstraints = {
+//        @UniqueConstraint(columnNames = "FIRSTNAME"),
+//        @UniqueConstraint(columnNames = "LASTNAME"),
+//        @UniqueConstraint(columnNames = "MIDDLENAME"),
+//        @UniqueConstraint(columnNames = "TELEPHONENUMBER"),
+//        @UniqueConstraint(columnNames = "CLIENTEMAIL") })
+//        @UniqueConstraint(columnNames = "CLIENTPASSPORTN") })
 
 public class Client implements Serializable {
 

@@ -4,11 +4,9 @@ import com.haulmont.testtask.entity.Entity;
 
 import java.util.UUID;
 
-public interface IEntityRepository<T extends Entity> {
-    // здесь хранятся методы Hibernate
+public interface IEntityReposotory<T extends Entity>  {
+    //методы с hibertane
 
-    T getById(UUID ud);
-
+    T getById(UUID id);
     void save(T entity);
-
 }
