@@ -4,9 +4,7 @@ import com.haulmont.testtask.entity.Client;
 
 import java.util.UUID;
 
-public class ClientRepository implements IClientRepository {
-
-
+public class ClientRepositoryNew implements IClientRepository {
     @Override
     public Client getById(UUID id) {
         return null;
@@ -22,5 +20,4 @@ public class ClientRepository implements IClientRepository {
 
         return 0;
     }
-
 }

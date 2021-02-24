@@ -4,7 +4,7 @@ import com.haulmont.testtask.entity.Entity;
 
 import java.util.UUID;
 
-public interface IEntityReposotory<T extends Entity>  {
+public interface IEntityRepository<T extends Entity>  {
     //методы с hibertane
 
     T getById(UUID id);

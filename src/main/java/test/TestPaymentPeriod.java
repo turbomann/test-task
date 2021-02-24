@@ -19,13 +19,13 @@ public class TestPaymentPeriod {
 //        System.out.println(formatter.parse(date));
 
 
-        int neededCreditSum = 300000;
-        double commonSumm;
-        double annuityPayment;
-        double coefficientAnnuityPayment;
-        double percentageRate = 15;
-        int creditPeriod = 18;
-        double monthCreditRate;
+        int neededCreditSum = 300000; //CLIENT_SIDE
+        double commonSum; // CALCULATE
+        double annuityPayment; // CALCULATE
+        double coefficientAnnuityPayment; //CALCULATE
+        double percentageRate = 15; // BANK_SIDE
+        int creditPeriod = 18; //CLIENT_SIDE
+        double monthCreditRate; //CALCULATE
 
 
         DecimalFormat round = new DecimalFormat("#.####",new DecimalFormatSymbols(Locale.ENGLISH));
@@ -51,14 +51,14 @@ public class TestPaymentPeriod {
         System.out.println(roundPayment.format(percent));
 
 
-        commonSumm = annuityPayment * creditPeriod;
+        commonSum = annuityPayment * creditPeriod;
         System.out.println("Payment plan");
         System.out.println("Number of payment "+" Date of payment "+ " | " + "Repayment of principal" + " | " +
                 " Percent repayment " + " | " + "Balance");
         for (int i = 1, b = 30; i <= creditPeriod ; i++, b += 30) {
             System.out.println(i + " | " + roundPayment.format(annuityPayment) + " | " + localDate.plusDays(b) + " | " +
                     (roundPayment.format(annuityPayment - percent)) + " | " +
-                    roundPayment.format(percent) + " | " + (roundPayment.format(commonSumm -= annuityPayment)));
+                    roundPayment.format(percent) + " | " + (roundPayment.format(commonSum -= annuityPayment)));
         }
     }
 }
